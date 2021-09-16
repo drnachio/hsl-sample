@@ -1,5 +1,72 @@
+:root {
+  --main-color-h: 220;
+  --sec-color-h: 80;
+  --luminosity: 40;
+  --color: hsl(100 50% 20%);
+  --back-color: hsl(var(--main-color-h) 50% calc(var(--luminosity) * 1%));
+  --contrast-color: hsl(0 100% calc((50 - var(--luminosity)) * 100000%));
+  --color-distance: calc(var(--main-color-h) - var(--sec-color-h));
+  --colorA: hsl(var(--main-color-h) 100% 50%);
+  --colorB: hsl(calc(var(--main-color-h) - var(--color-distance) * 0.33) 90% 45%);
+  --colorC: hsl(calc(var(--main-color-h) - var(--color-distance) * 0.66) 80% 35%);
+  --colorD: hsl(calc(var(--main-color-h) - var(--color-distance)) 70% 25%);
+  --colorA-D: hsl(var(--main-color-h) 100% 50%);
+  --colorB-D: hsl(calc(var(--main-color-h) - var(--color-distance) * 0.33) 80% 25%);
+  --colorC-D: hsl(calc(var(--main-color-h) - var(--color-distance) * 0.66) 70% 20%);
+  --colorD-D: hsl(calc(var(--main-color-h) - var(--color-distance)) 60% 15%);
+}
+
 body {
   background-color: #333;
-  color: #f8ba00;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.mainBlock {
+  background-color: var(--back-color);
+  color:  var(--contrast-color);
+  font-weight: 900;
+  padding: 1em;
+  border-radius: 1em;
+  margin-bottom: 2em;
+}
+
+.block {
+  width:100px;
+  height: 100px;
+  float:left;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.blockA {
+  background-color: var(--colorA);
+}
+  
+.blockB {
+  background-color: var(--colorB);
+}
+  
+.blockC {
+  background-color: var(--colorC);
+}
+  
+.blockD {
+  background-color: var(--colorD);
+}
+  
+.dark.blockA {
+  background-color: var(--colorA-D);
+}
+  
+.dark.blockB {
+  background-color: var(--colorB-D);
+}
+  
+.dark.blockC {
+  background-color: var(--colorC-D);
+}
+  
+.dark.blockD {
+  background-color: var(--colorD-D);
+}
+  
